@@ -1,11 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tea house</title>
+    <!--Tailwind and DaisyUI CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!--Font-awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Custom Color-->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gradient-start': '#FF8938',
+                        'gradient-end': '#F00',
+                    }
+                }
+            }
+        }
+    </script>
+    <!--CSS Styles-->
+    <style>
+        .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="font-manrope">
+    <header class="container mx-auto">
+        <div class="hero">
+            <div class="hero-content flex-col lg:flex-row">
+                <div class="mt-0">
+                    <h1 class="text-6xl font-extrabold leading-normal ">It's good <br>tea time at The <br>Tea House</h1>
+                    <p class="py-6 text-lg font-medium text-slate-400">Tea and Botanical Solutions Supplier Give Optimum
+                        Satisfaction To Your Taste Buds.
+                    </p>
+                    <button class="btn bg-gradient-to-r from-[#FF8938] to-[#F00] text-white">Explore More</button>
+                </div>
+                <div class="mt-20">
+                    <img src="images/banner.png" class="rounded-lg" />
+                    <div
+                        class="flex space-x-3 shadow-2xl bg-base-100 p-4 w-64 rounded-xl justify-center items-center -translate-y-28 ml-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" viewBox="0 0 48 46" fill="none">
+                            <path
+                                d="M42.4416 13.778L29.9033 12.6152L24.9228 1.04987C24.574 0.240051 23.4259 0.240051 23.0772 1.04987L18.0966 12.6151L5.5584 13.778C4.68043 13.8594 4.32568 14.9514 4.98802 15.5333L14.4482 23.8439L11.6796 36.1279C11.4858 36.988 12.4147 37.6629 13.1728 37.2128L24 30.7838L34.8272 37.2128C35.5854 37.663 36.5141 36.988 36.3204 36.1279L33.5517 23.8439L43.012 15.5333C43.6743 14.9514 43.3195 13.8594 42.4416 13.778Z"
+                                fill="#FFDC64" />
+                            <path
+                                d="M11.1823 0.651717C11.8215 1.53953 13.6256 5.35235 14.6571 7.57442C14.8193 7.92373 14.381 8.23929 14.1011 7.97463C12.3211 6.29163 9.2775 3.37113 8.63831 2.48322C8.13253 1.78075 8.292 0.801249 8.99456 0.295467C9.69703 -0.210315 10.6765 -0.0507523 11.1823 0.651717Z"
+                                fill="#FFF082" />
+                            <path
+                                d="M36.8177 0.651717C36.1785 1.53953 34.3744 5.35235 33.343 7.57442C33.1808 7.92373 33.6191 8.23929 33.8989 7.97463C35.6789 6.29163 38.7224 3.37103 39.3617 2.48322C39.8675 1.78075 39.708 0.801249 39.0055 0.295467C38.303 -0.210315 37.3235 -0.0507523 36.8177 0.651717Z"
+                                fill="#FFF082" />
+                            <path
+                                d="M46.9183 26.6867C45.8782 26.3475 41.6974 25.7871 39.2671 25.4796C38.8851 25.4313 38.7177 25.9447 39.0547 26.1309C41.199 27.3155 44.9062 29.3277 45.9463 29.6669C46.7692 29.9353 47.6539 29.4858 47.9223 28.6627C48.1907 27.8397 47.7412 26.9551 46.9183 26.6867Z"
+                                fill="#FFF082" />
+                            <path
+                                d="M1.08176 26.6867C2.12182 26.3475 6.30261 25.7871 8.73289 25.4796C9.11492 25.4313 9.28236 25.9447 8.94533 26.1309C6.80098 27.3155 3.09382 29.3277 2.05376 29.6669C1.23082 29.9353 0.346098 29.4858 0.0776916 28.6627C-0.190715 27.8397 0.258817 26.9551 1.08176 26.6867Z"
+                                fill="#FFF082" />
+                            <path
+                                d="M22.4807 44.3756C22.4807 43.2816 23.2443 39.1332 23.7055 36.7272C23.778 36.3491 24.3181 36.3491 24.3906 36.7272C24.8518 39.1332 25.6154 43.2816 25.6154 44.3756C25.6154 45.2412 24.9137 45.9429 24.0481 45.9429C23.1824 45.943 22.4807 45.2412 22.4807 44.3756Z"
+                                fill="#FFF082" />
+                            <path
+                                d="M26.7338 5.2555L24.9227 1.04987C24.5739 0.240051 23.4258 0.240051 23.0771 1.04987L18.0965 12.6151L5.5584 13.778C4.68043 13.8594 4.32568 14.9514 4.98802 15.5333L14.4482 23.8439L11.6796 36.1279C11.4858 36.988 12.4147 37.6629 13.1728 37.2128L14.6138 36.3571C16.9762 21.0646 23.6177 9.83875 26.7338 5.2555Z"
+                                fill="#FFC850" />
+                        </svg>
+                        <div>
+                            <h3 class="text-3xl font-extrabold text-[#1C1C1C]">5.00</h3>
+                            <p class="text-base font-semibold text-[#777]">Trust Pilot Ratings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto">
+        <section class="text-center my-24">
+            <h2 class="text-5xl font-extrabold mb-5">Our Featured Products</h2>
+            <p class="text-base font-medium text-slate-400 max-w-4xl mx-auto mb-8">There are many variations of passages
+                of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+                randomised words which don't look even slightly believable. </p>
+            <!--card section-->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
+                <!--First Card-->
+                <div class="card bg-gradient-to-b from-[#F4F4F4] to-bg-slate-100 p-8">
+                    <figure><img src="images/tea-1.png" alt="Shoes" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="text-2xl font-extrabold">Milk Tea</h2>
+                        <p class="text-base font-semibold text-slate-400">Creamer could be replaced by fresh milk</p>
+                    </div>
+                </div>
+                <!--Second Card-->
+                <div class="card bg-gradient-to-b from-[#F4F4F4] to-bg-slate-100 p-8">
+                    <figure><img src="images/tea-1.png" alt="Shoes" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="text-2xl font-extrabold">Milk Tea</h2>
+                        <p class="text-base font-semibold text-slate-400">Creamer could be replaced by fresh milk</p>
+                    </div>
+                </div>
+                <!--Third Card-->
+                <div class="card bg-gradient-to-b from-[#F4F4F4] to-bg-slate-100 p-8">
+                    <figure><img src="images/tea-1.png" alt="Shoes" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="text-2xl font-extrabold">Milk Tea</h2>
+                        <p class="text-base font-semibold text-slate-400">Creamer could be replaced by fresh milk</p>
+                    </div>
+                </div>
+                <!--Fourth Card-->
+                <div class="card bg-gradient-to-b from-[#F4F4F4] to-bg-slate-100 p-8">
+                    <figure><img src="images/tea-1.png" alt="Shoes" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="text-2xl font-extrabold">Milk Tea</h2>
+                        <p class="text-base font-semibold text-slate-400">Creamer could be replaced by fresh milk</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Freshly Presented-->
+        <section class="max-w-6xl mx-auto my-24 flex flex-col lg:flex-row gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 flex-1 gap-4">
+                <div class="rounded-lg opacity-10 h-36 bg-gradient-to-r from-[#F00] to-[#FF8938]"></div>
+                <div class="bg-[#E6A6231A] row-span-2 flex justify-center items-center p-8">
+                    <img src="images/fresh-1.png" alt="">
+                </div>
+                <div class="bg-[#5776391A] row-span-2 flex justify-center items-center p-8">
+                    <img src="images/fresh-2.png" alt="">
+                </div>
+                <div class="rounded-lg h-36 bg-gradient-to-r from-[#D9D9D9] to-[#ffffff]"></div>
+            </div>
+            <div class="flex-1 space-y-6">
+                <h2 class="text-5xl font-extrabold">Great Tea, Freshly Presented</h2>
+                <p class="text-base text-justify font-medium text-slate-400">The meaning of gong cha is chanese is to
+                    provide the best tea to emperor from all possessions . It represents the highest quality and self
+                    expectation. Establishing in 2006, Gong cha had been deeply appreciated by its custoers because of
+                    good words of mouth and unique customized service orginated from Taiwan.</p>
+                <h3 class="text-xl font-extrabold">Unique Taste</h3>
+                <p class="text-base font-medium text-slate-400">A Unique and different style from other teapots gives a
+                    luxurious and minimalist impression</p>
+                <h3 class="text-xl font-extrabold">Premium Quality</h3>
+                <p class="text-base font-medium text-slate-400">Premium Quality that makes tea more elegant and more
+                    durable when you use it.</p>
+            </div>
+        </section>
+        <!--Super Clients-->
+        <section
+            class="max-w-6xl mx-auto rounded-xl  my-24 bg-gradient-to-r from-[#FF8938] to-[#F00] lg:py-20 lg:px-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-40">
+            <div class="flex flex-col items-center justify-center">
+                <div class="text-[#F4F4F4] space-y-5">
+                    <h2 class="text-5xl font-extrabold">Meet Our Super <br> Clients</h2>
+                    <p class="text-base font-medium">There are many variations of passages of Lorem Ipsum available, but
+                        the
+                        majority have suffered alteration in some form, by injected humour, or randomised words which
+                        don't
+                        look even slightly believable. </p>
+                    <button class="btn bg-white"><span class="text-transparent bg-clip-text bg-gradient-to-r from-gradient-start to-gradient-end">Show All</span></button>
+                </div>
+            </div>
+            <!--Review Container-->
+            <div class="relative mt-10">
+                <!--Next review-->
+                <div class="relative lg:w-[433px] z-20 bg-white rounded-lg p-10 opacity-40 mb-16">
+                    <img class="absolute -left-5 -top-5 border-4 border-white rounded-full" src="images/client.png"
+                        alt="">
+                    <p class="text-base font-normal text-slate-400 text-justify">We are providing the best and suitable
+                        home insurance services for the people who are interested to treatment</p>
+                    <h4 class="text-base font-bold text-[#1C1C1C]">Ilham Yuda</h4>
+                    <p class="text-base font-medium text-[#5D5A6F]">Businessman</p>
+                    <div class="flex justify-end">
+                        <img src="images/circles.png" alt="">
+                    </div>
+                </div>
+                <!--Current review-->
+                <div class="absolute lg:w-[433px] z-30 -left-32 top-36 bg-white rounded-lg p-10">
+                    <img class="absolute -left-5 -top-5 border-4 border-white rounded-full" src="images/client.png"
+                        alt="">
+                    <p class="text-base font-normal text-slate-400 text-justify">We are providing the best and suitable
+                        home insurance services for the people who are interested to treatment</p>
+                    <h4 class="text-base font-bold text-[#1C1C1C]">Ilham Yuda</h4>
+                    <p class="text-base font-medium text-[#5D5A6F]">Businessman</p>
+                    <div class="flex justify-end">
+                        <img src="images/circles.png" alt="">
+                    </div>
+                </div>
+                <!--Previous review-->
+                <div class="relative lg:w-[433px] z-20 bg-white rounded-lg p-10 opacity-40 mb-16">
+                    <img class="absolute -left-5 -top-5 border-4 border-white rounded-full" src="images/client.png"
+                        alt="">
+                    <p class="text-base font-normal text-slate-400 text-justify">We are providing the best and suitable
+                        home
+                        insurance services for the people who are interested to treatment</p>
+                    <h4 class="text-base font-bold text-[#1C1C1C]">Ilham Yuda</h4>
+                    <p class="text-base font-medium text-[#5D5A6F]">Businessman</p>
+                    <div class="flex justify-end">
+                        <img src="images/circles.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--News Section-->
+        <section class="my-24 max-w-6xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-5xl font-extrabold mb-5">Our Featured Products</h2>
+                <p class="text-base font-medium text-slate-400 max-w-4xl mx-auto mb-8">There are many variations of passages
+                of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+                randomised words which don't look even slightly believable. </p>
+            </div>
+            <!--Card Container-->
+            <div class="flex flex-cols-1 lg:flex-cols-3 gap-14">
+                <!--First Card-->
+                <div class="card bg-base-100 border-2 rounded-xl border-[#D2D2D2]">
+                    <figure class="px-10 pt-10">
+                      <img src="images/news-1.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body">
+                        <span class="text-base font-medium text-slate-400">Feb 05, 2027</span>
+                      <h2 class="card-title text-xl font-extrabold">Collecting 8 points for <br> discount</h2>
+                      <p class="text-base font-medium text-slate-400">There are many variations of passages of Lorem Ipsum available.</p>
+                    <h6 class="text-base font-bold">Learn More</h6>
+                    </div>
+                  </div>
+                   <!--Second Card-->
+                <div class="card bg-base-100 border-2 rounded-xl border-[#D2D2D2]">
+                    <figure class="px-10 pt-10">
+                      <img src="images/news-2.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body">
+                        <span class="text-base font-medium text-slate-400">Feb 05, 2027</span>
+                      <h2 class="card-title text-xl font-extrabold">Collecting 8 points for <br> discount</h2>
+                      <p class="text-base font-medium text-slate-400">There are many variations of passages of Lorem Ipsum available.</p>
+                    <h6 class="text-base font-bold">Learn More</h6>
+                    </div>
+                  </div>
+                   <!--Third Card-->
+                <div class="card bg-base-100 border-2 rounded-xl border-[#D2D2D2]">
+                    <figure class="px-10 pt-10">
+                      <img src="images/news-3.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body">
+                        <span class="text-base font-medium text-slate-400">Feb 05, 2027</span>
+                      <h2 class="card-title text-xl font-extrabold">Collecting 8 points for <br> discount</h2>
+                      <p class="text-base font-medium text-slate-400">There are many variations of passages of Lorem Ipsum available.</p>
+                    <h6 class="text-base font-bold">Learn More</h6>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-base-200">
+        <div class="flex justify-between lg:mx-52 pt-20">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="62" height="65" viewBox="0 0 62 65" fill="none">
+                    <g clip-path="url(#clip0_60_141)">
+                      <path d="M55.3551 27.8521L7.23615 34.7869C5.15259 35.0932 3.04087 34.397 1.63306 32.8652C0.619437 31.7512 0 30.2751 0 28.6598C0 25.3178 2.64668 22.5884 5.99727 22.4213C6.22252 22.4213 6.41962 22.3935 6.64487 22.3656L54.7639 15.4588C56.8474 15.1524 58.9591 15.8487 60.3669 17.3804C61.3806 18.4944 62 19.9705 62 21.5858C62 24.9279 59.3533 27.6572 56.0027 27.8243C55.8056 27.7964 55.5804 27.8243 55.3551 27.8521Z" fill="#1C1C1C"/>
+                      <path d="M50.3433 44.2838L11.6567 49.8539C8.16529 49.8539 5.34967 47.0689 5.34967 43.6154C5.34967 40.162 8.16529 37.3769 11.6567 37.3769L50.3433 31.8069C53.8347 31.8069 56.6503 34.5919 56.6503 38.0454C56.6503 41.4709 53.8347 44.2838 50.3433 44.2838Z" fill="#1C1C1C"/>
+                      <path d="M40.1226 61.3561L21.8492 64.1411C18.3579 64.1411 15.5422 61.3561 15.5422 57.9026C15.5422 54.4492 18.3579 51.6642 21.8492 51.6642L40.1226 48.8792C43.614 48.8792 46.4296 51.6642 46.4296 55.1176C46.4578 58.5711 43.614 61.3561 40.1226 61.3561Z" fill="#1C1C1C"/>
+                      <path d="M37.307 14.7625V6.37958C37.307 2.92614 34.4914 0.141113 31 0.141113C27.5086 0.141113 24.693 2.92614 24.693 6.37958V16.5728L37.307 14.7625Z" fill="#1C1C1C"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_60_141">
+                        <rect width="62" height="64" fill="white" transform="translate(0 0.141113)"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+            </div>
+            <div class="flex items-center gap-4">
+                <p>Ready to get strated?</p>
+                <button class="btn bg-gradient-to-r from-gradient-start to-gradient-end text-white">Get Started</button>
+            </div>
+        </div>
+        <div class="footer p-10 text-base-content lg:mx-44">
+        <nav>
+          <header class="text-xl font-semibold space-y-3">Services</header> 
+          <a class="link link-hover">Branding</a>
+          <a class="link link-hover">Design</a>
+          <a class="link link-hover">Marketing</a>
+          <a class="link link-hover">Advertisement</a>
+        </nav> 
+        <nav>
+          <header class="text-xl font-semibold space-y-3">Company</header> 
+          <a class="link link-hover">About us</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Jobs</a>
+          <a class="link link-hover">Press kit</a>
+        </nav> 
+        <nav>
+          <header class="text-xl font-semibold space-y-3">Legal</header> 
+          <a class="link link-hover">Terms of use</a>
+          <a class="link link-hover">Privacy policy</a>
+          <a class="link link-hover">Cookie policy</a>
+        </nav> 
+        <form>
+          <header class="text-2xl font-semibold mb-8">Subscribe to our <br>newsletter</header> 
+          <fieldset class="form-control w-80">
+            <div class="join">
+              <input type="text" placeholder="Email address" class="border-b-2 border-[#494949] bg-transparent outline-none mr-2" /> 
+              <button class="btn bg-gradient-to-r from-gradient-start to-gradient-end rounded-full text-white">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        </div>
+        <div class="footer footer-center p-4 text-base-content">
+            <aside>
+                <p>© 2027 UIDesign.to - All rights reserved.</p>
+              </aside>
+        </div>
+      </footer>
 </body>
+
 </html>
